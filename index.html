@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown I See</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/showdown.min.js"></script>
+</head>
+<body>
+    <div class='file-choose container bg-light'>
+        <script>
+            const converter = new showdown.Converter()
+
+            function updateMarkdown(event) {
+                const reader = new FileReader()
+
+                reader.onload = () => {
+                    $("#main-container").html(converter.makeHtml(reader.result))
+                }
+
+                reader.readAsText(event.target.files[0])
+            }
+        </script>
+        <div class="input-group form-control form-control-file">
+            <label for="file-input" class="custom-file-label">Choose markdown file</label>
+            <input class="custom-file-input" type="file" name="target-file" id="file-input"
+                accept="*.md" onchange="updateMarkdown(event)">
+        </div>
+    </div>
+    <hr>
+    <div class="markdown-container container" id="main-container">
+        <h1>Welcome to Markdown I See</h1>
+    </div>
+</body>
+</html>
