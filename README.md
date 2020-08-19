@@ -1,3 +1,5 @@
 # Markdown I See
 
-Version: 0.1.0
+Markdown viewer based on Markdown-it and Electron
+
+Version: 1.0.0
