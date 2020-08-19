@@ -1,0 +1,19 @@
+{
+  "name": "markdown-i-see",
+  "version": "1.0.0",
+  "description": "Markdown Viewer based on Electron.js",
+  "main": "index.js",
+  "repository": "https://github.com/dy55/markdown-i-see.git",
+  "author": "dy_55 <minidy20001001@outlook.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "electron": "^9.2.1",
+    "electron-builder": "^22.8.0"
+  },
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder .",
+    "pack": "electron-builder . --dir"
+  }
+}
